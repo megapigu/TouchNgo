@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TouchnGo</title>
+    <script defer src="./js/index.js"></script>
+    <style src ></style>
+    <link rel="stylesheet" href="./css/fixed-header-styles.css">
+
+    <style>
+        .text-small {
+            font-size: 12px;
+            font-weight: 400;
+            color: #1f1f1f;
+        }
+
+        .text-medium {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1f1f1f;
+        }
+
+        .text-large {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1f1f1f;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            color: #1f1f1f;
+        }
+
+        .rounded-button {
+        width:100%;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 20px; /* Adjust border-radius to control the roundness of edges */
+        background-color: #0047B9;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 700;
+        margin: 12px 0px;
+        }
+
+        .rounded-button a {
+        color: inherit; /* Inherit button's color */
+        text-decoration: none; /* Remove underline */
+        }
+
+        .white-card {
+            margin: 60px 12px 0px 12px;
+            border-radius: 8px;
+            background-color: #fff;
+            flex-direction: column;
+            padding: 20px;
+        }
+        
+        .terms {
+            display: flex;
+            margin-top: 16px;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .terms-img {
+            justify-content: center;
+            align-items: center;
+            border-radius: 2px;
+            border: 1px solid var(--text-grey, #818181);
+            display: flex;
+            width: 16px;
+            height: 16px;
+        }
+
+        .terms-text {
+            color: var(--text-grey, #818181);
+            font-weight: 400;
+            font-size: 12px;
+            flex-grow: 1;
+            flex-basis: auto;
+        }
+
+        #form {
+            margin: 60px auto 0 auto;
+            width: 85vw;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            display: flex; /* Use flexbox for centering */
+            flex-direction: column;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        #form button {
+            width:100%;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 20px; /* Adjust border-radius to control the roundness of edges */
+            background-color: #0047B9;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            margin: 12px 0px;
+        }
+        
+        .input-control {
+            display: flex;
+            flex-direction: column;  
+        }
+
+        .input-control input {
+            border: 2px solid #f0f0f0;
+            border-radius: 4px;
+            font-size: 12px;
+            padding: 12px 8px;
+            width: 95%;
+            display: block;
+        }
+
+        .input-control input:focus {
+            outline: 0;
+        }
+
+        .input-control.success input {
+            border-color: green;
+        }
+
+        .input-control.error input {
+            border-color: red;
+        }
+
+        .input-control .error {
+            color: red;
+            font-size: 8px;
+            height: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="fixed-header">
+            <div class="logo-container">
+                <div style="margin-right: 28px;">
+                    <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/26cfd2e6f6b81c7f7b6acb9fe387ebc33a47e9d0561ad7bdc886bc3753554313?"
+                    alt="Logo" width="22">
+                </div>
+                <div>
+                    <span class="text-header">GOtransport</span>
+                </div>
+            </div>
+            <div class="right-text text-header">FAQ</div>
+        </div>
+
+        <!-- <div class="white-card">
+            <p class="text-large">Are your details correct?</p>
+            <p class="text-small">Your full name & MyKad number MUST be the same as your MyKad</p>
+            <div class="terms">
+                <div class="terms-img">
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/241500d6b2fdc7408ec2c5daf60061b4f0dd9a87da4ed6a5f127f35f13e69a87?"
+                    class="img-6"
+                  />
+                </div>
+                <div class="terms-text">
+                  I agree to the <span style="color: rgba(19, 132, 200, 1)">Terms & Conditions</span>
+                  and hereby accept the eligibility of the reward.
+                </div>
+              </div>
+              <div>
+                  <button class="rounded-button"><a href="another-page.html">Continue</a></button>
+              </div>
+            </div>
+        </div> -->
+
+        <form id="form" action="./application-two.html" autocomplete="off" method="GET">
+            <p class="text-large">Are your details correct?</p>
+            <p class="text-small" style="margin-bottom: 12px;">Your full name & MyKad number MUST be the same as your MyKad</p>
+            <div class="input-control">
+                <label for="username">Username</label>
+                <input id="username" name="username" type="text" required>
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="myKadNo">MyKad No.</label>
+                <input id="myKadNo" name="myKadNo" minlength="12" maxlength="12" type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+                <div class="error"></div>
+            </div>
+            <div>
+                <input type="checkbox" id="terms" name="terms" data-toggle="toggle" data-onstyle="danger" data-offstyle="success"/>
+                <label for="terms">I agree to the <span style="color: rgba(19, 132, 200, 1)">Terms & Conditions</span>
+                    and hereby accept the eligibility of the reward.</label>
+            </div>
+            <button id="submit" type="submit">Continue</button>
+        </form>     
+    </div>       
+</body>
+</html>
