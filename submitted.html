@@ -3,10 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submitted</title>
-    <script src="./submitted.js"></script> 
+    <title>Touch 'n Go</title>
+    <link rel="stylesheet" href="./css/fixed-header-styles.css">
+    <style>
+        .white-card {
+            margin: 28px 12px 0px 12px;
+            border-radius: 8px;
+            background-color: #fff;
+            flex-direction: column;
+            padding: 60px 40px;
+            display: flex;
+        }
+
+        .text-large {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1f1f1f;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            color: #818181;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .button {
+            padding: 12px;
+            border: none;
+            border-radius: 20px; /* Adjust border-radius to control the roundness of edges */
+            background-color: #0047B9;
+            font-size: 12px;
+            font-weight: 700;
+            margin: 28px 16px;
+        }
+
+        .icon-containers {
+            margin: 60px 12px 0px 12px;
+            flex-direction: row;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
 </head>
 <body>
-    <p id="paragraph"></p>
+    <!-- <p id="paragraph"></p> -->
+    <div>
+        <div class="fixed-header">
+            <div class="logo-container">
+                <!-- <div style="margin-right: 28px;">
+                    <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/26cfd2e6f6b81c7f7b6acb9fe387ebc33a47e9d0561ad7bdc886bc3753554313?"
+                    alt="Logo" width="22">
+                </div> -->
+                <div>
+                    <span class="text-header">GOtransport</span>
+                </div>
+            </div>
+            <div class="right-text text-header">FAQ</div>
+        </div>
+
+        <div class="icon-containers">
+            <div style="width: 40%; height: 52px; display: flex; justify-content: center; border-right: 3px solid #0047B9;">
+                <img src="./images/TNG-Icon.png" alt="" style="align-self: center; height: 52px;">
+            </div>
+            <div style="width: 60%; height: 52px; display: flex; justify-content: center;">
+                <img src="./images/myrapid.png" alt="" style="align-self: center; height: 24px;">
+            </div>
+        </div>
+
+        <div class="white-card">
+            <img src="./images/wait-icon.jpg" alt="" style="width: 75%; align-self: center; margin-bottom: 24px;">
+            <p class="text-large" style="margin-bottom: 10px;" >Thank you!</p>
+            <p>Your application has been received and is being processed. Please click on the button below to redirect to home page.</p>
+        </div>
+
+        <div class="button">
+            <p style="color: #fff;">Redirecting in <span id="timer" class="text-primary">3</span> seconds</p>
+        </div>
+    </div>
 </body>
+<script src="./js/submitted.js"></script> 
 </html>
