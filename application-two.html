@@ -3,21 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application Two</title>
+    <title>Touch 'n Go</title>
     <link rel="stylesheet" href="./css/fixed-header-styles.css">
     <style>
-        .text-small {
-            font-size: 12px;
-            font-weight: 400;
-            color: #1f1f1f;
-        }
-
-        .text-medium {
-            font-size: 14px;
-            font-weight: 700;
-            color: #1f1f1f;
-        }
-
         .text-large {
             font-size: 20px;
             font-weight: 700;
@@ -39,11 +27,10 @@
         } */
 
         .previous-input-div {
-            border: 2px solid #f0f0f0;
             border-radius: 4px;
             font-size: 12px;
-            padding: 10px 8px;
-            width: 95%;
+            padding: 12px 0px;
+            width: 100%;
             display: flex;
             background-color: #EFEFEF;
             margin-bottom: 15px;
@@ -55,7 +42,7 @@
 
         #form {
             margin: 60px 12px 0 12px;
-            width: 85vw;
+            /* width: 85vw; */
             padding: 20px;
             border-radius: 8px;
             background-color: #fff;
@@ -63,7 +50,6 @@
             flex-direction: column;
             justify-content: center;
             font-size: 12px;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             color: #818181;
         }
 
@@ -86,10 +72,10 @@
 
         .input-control input {
             border: 2px solid #f0f0f0;
+            color: #818181;
             border-radius: 4px;
             font-size: 12px;
             padding: 10px 8px;
-            width: 95%;
             display: flex;
         }
 
@@ -100,7 +86,7 @@
             padding: 10px 8px;
             width: 100%;
             display: flex;
-            color: var(--text-grey, #818181);
+            color: #818181;
         }
 
         .input-control input:focus {
@@ -108,15 +94,16 @@
         }
 
         .input-control.success input {
-            border-color: green;
+            color: #818181;
+            background-color: #f0f0f0;
         }
 
         .input-control.error input {
-            border-color: red;
+            border-color: #0047B9;
         }
 
         .input-control .error {
-            color: red;
+            color: #0047B9;
             font-size: 8px;
             height: 13px;
         }
@@ -126,12 +113,12 @@
     <div>
         <div class="fixed-header">
             <div class="logo-container">
-                <div style="margin-right: 28px;">
+                <!-- <div style="margin-right: 28px;">
                     <img
                     loading="lazy"
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/26cfd2e6f6b81c7f7b6acb9fe387ebc33a47e9d0561ad7bdc886bc3753554313?"
                     alt="Logo" width="22">
-                </div>
+                </div> -->
                 <div>
                     <span class="text-header">GOtransport</span>
                 </div>
@@ -140,33 +127,33 @@
         </div>
 
         <form id="form" action="./submitted.html" autocomplete="off" method="GET">
-            <p class="text-large">GOtransport Application</p>
+            <p class="text-large" style="margin-bottom: 12px;">GOtransport Application</p>
             <div>
-                <p>Name as Per IC</p>
-                <div class="previous-input-div"><p id="usernameDisplay"></p></div>
+                <p style="margin-bottom: 8px;">Name as Per IC</p>
+                <div class="previous-input-div"><p id="usernameDisplay" style="margin: 0px 12px;"></p></div>
             </div>
             <div>
-                <p>IC No</p>
-                <div class="previous-input-div"><p id="myKadNoDisplay"></p></div>
+                <p style="margin-bottom: 8px;">IC No</p>
+                <div class="previous-input-div"><p id="myKadNoDisplay" style="margin: 0px 12px;"></p></div>
             </div>
             <div class="input-control no-label">
-                <!-- <label for="addressLineOne"></label> -->
+                <label style="margin-bottom: 8px;" for="addressLineOne"></label>
                 <input id="addressLineOne" name="addressLineOne" placeholder="Address Line 1 *" type="text" required>
                 <div class="error"></div>
             </div>
             <div class="input-control no-label">
-                <!-- <label for="addressLineTwo"></label> -->
+                <label style="margin-bottom: 8px;" for="addressLineTwo"></label>
                 <input id="addressLineTwo" name="addressLineTwo" placeholder="Address Line 2" type="text">
                 <div class="error"></div>
             </div>
             <div class="input-control no-label">
-                <!-- <label for="city"></label> -->
+                <label style="margin-bottom: 8px;" for="city"></label>
                 <input id="city" name="city" placeholder="City *" type="text" required>
                 <div class="error"></div>
             </div>
             <div class="input-control">
-                <label for="State">State *</label>
-                <select name="State" id="State" required onchange="getSelectValue();">
+                <label style="margin-bottom: 8px;" for="State">State *</label>
+                <select style="font-weight: 600;" name="State" id="State" required onchange="getSelectValue();">
                     <option value="">Select State</option>
                     <option value="johor">Johor</option>
                     <option value="kedah">Kedah</option>
@@ -185,13 +172,13 @@
                 <div class="error"></div>
             </div>
             <div class="input-control no-label">
-                <!-- <label for="postcode"></label> -->
+                <label style="margin-bottom: 8px;" for="postcode"></label>
                 <input id="postcode" name="postcode" placeholder="Postcode *" minlength="5" maxlength="5" type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
                 <div class="error"></div>
             </div>
             <div class="input-control">
-                <label for="gender">Gender *</label>
-                <select name="gender" id="gender" required onchange="getSelectValue();">
+                <label style="margin-bottom: 8px;" for="gender">Gender *</label>
+                <select style="font-weight: 600;" name="gender" id="gender" required onchange="getSelectValue();">
                     <option value="">Select Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -199,8 +186,8 @@
                 <div class="error"></div>
             </div>
             <div class="input-control">
-                <label for="race">Race *</label>
-                <select name="race" id="race" required onchange="getSelectValue();">
+                <label style="margin-bottom: 8px;" for="race">Race *</label>
+                <select style="font-weight: 600;" name="race" id="race" required onchange="getSelectValue();">
                     <option value="">Select Race</option>
                     <option value="malay">Malay</option>
                     <option value="chinese">Chinese</option>
@@ -210,7 +197,8 @@
                 <div class="error"></div>
             </div>
             <button id="submit" type="submit">Continue</button>
-        </form>     
+        </form>
+        <p style="text-align: center; font-size: 12px; padding: 16px 12px 40px 12px; font-weight: 500;">Please contact your respective e-wallet provider for any inquiries or feedback on your application.</p>     
     </div>
 
     <script src="./js/results.js"></script> 
