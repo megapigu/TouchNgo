@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TouchnGo</title>
+    <title>Touch 'n Go</title>
     <link rel="stylesheet" href="./css/fixed-header-styles.css">
+    <script src="https://kit.fontawesome.com/a511dde2b4.js" crossorigin="anonymous"></script>
 
     <style>
         .text-stylo {
@@ -115,29 +116,24 @@
             font-size: 12px;
         }
         
-        .terms {
-            display: flex;
-            margin-top: 16px;
-            justify-content: space-between;
-            gap: 12px;
-        }
-
-        .terms-img {
+        #form {
+            padding-top: 8px;
+            display: flex; /* Use flexbox for centering */
+            flex-direction: column;
             justify-content: center;
-            align-items: center;
-            border-radius: 2px;
-            border: 1px solid #818181;
-            display: flex;
-            width: 16px;
-            height: 16px;
+            font-size: 12px;
         }
 
-        .terms-text {
-            color: #818181;
-            font-weight: 400;
+        #form button {
+            width:100%;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 20px; /* Adjust border-radius to control the roundness of edges */
+            background-color: #0047B9;
+            color: #fff;
             font-size: 12px;
-            flex-grow: 1;
-            flex-basis: auto;
+            font-weight: 700;
+            margin: 12px 0px;
         }
     </style>
 </head>
@@ -145,13 +141,13 @@
     <div>
         <div class="fixed-header">
             <div class="logo-container">
-                <div style="margin-right: 28px;">
+                <!-- <div style="margin-right: 28px;">
                     <img
                     loading="lazy"
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/26cfd2e6f6b81c7f7b6acb9fe387ebc33a47e9d0561ad7bdc886bc3753554313?"
                     alt="Logo" width="22">
-                </div>
-                <div>
+                </div> -->
+                <div style="margin-left: 8px;">
                     <span class="text-header">GOtransport</span>
                 </div>
             </div>
@@ -220,37 +216,49 @@
               </div>
               <div class="div-11">Available for all transport services under myRapid</div>
             </div>
-            <div class="terms">
-              <div class="terms-img">
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/241500d6b2fdc7408ec2c5daf60061b4f0dd9a87da4ed6a5f127f35f13e69a87?"
-                  class="img-6"
-                />
+            <form id="form" action="./application-one.html" autocomplete="off" method="GET">
+              <div>
+                  <input type="checkbox" id="terms" name="terms" data-toggle="toggle" data-onstyle="danger" data-offstyle="success"/>
+                  <label for="terms">I agree to the <span style="color: rgba(19, 132, 200, 1)">Terms & Conditions</span>
+                      and hereby accept the eligibility of the reward.</label>
               </div>
-              <div class="terms-text">
-                I agree to the <span style="color: rgba(19, 132, 200, 1)">Terms & Conditions</span>
-                and hereby accept the eligibility of the reward.
-              </div>
-            </div>
-            <div>
-                <button class="rounded-button"><a href="./application-one.html">Claim Now!</a></button>
-            </div>
+              <button id="submit" type="submit">Continue</button>
+          </form>
+        </div>
+
+        <div class="white-card-two" style="margin-top: 12px;">
+          <p class="text-medium" style="margin-bottom: 4px;">What is GOtransport?</p>
+          <div style="display: flex;">
+            <i class="fa-solid fa-circle-check" style="margin-right: 8px; align-self: center; color: #01B755;"></i>
+            <p class="text-small">An incentive from the government in collaboration with myRapid and Touch 'n Go to encourage Malaysian citizens to use the public transport more often.</p>
+          </div>
         </div>
 
         <div class="white-card-two" style="margin-top: 12px;">
           <p class="text-medium" style="margin-bottom: 4px;">Who is eligible for GOtransport?</p>
           <div style="display: flex;">
-            <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/26cfd2e6f6b81c7f7b6acb9fe387ebc33a47e9d0561ad7bdc886bc3753554313?"
-                    alt="Logo" width="22">
-            <p class="text-small">Malaysians of any age that has a working TouchnGo eWallet account under their name.</p>
+            <i class="fa-solid fa-circle-check" style="margin-right: 8px; align-self: center; color: #01B755;"></i>
+            <p class="text-small">Malaysian citizen of any age that has a working TouchnGo eWallet account registered under their IC and phone number.</p>
           </div>
-        </div>
-
-
+        </div> 
     </div>
-    
 </body>
+<script>
+  const checkbox = document.querySelector('input[id=terms]');
+  const submitButton = document.getElementById("submit");
+
+  checkbox.addEventListener("change", function() {
+      if (this.checked) {
+          submitButton.disabled = false;
+      } else {
+          submitButton.disabled = true;
+      }
+  });
+
+  if(checkbox.checked) {
+      submitButton.disabled = false;
+  } else {
+      submitButton.disabled = true;
+  }
+</script>
 </html>
