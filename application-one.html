@@ -4,24 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TouchnGo</title>
+    <title>Touch 'n Go</title>
     <script defer src="./js/index.js"></script>
     <style src ></style>
     <link rel="stylesheet" href="./css/fixed-header-styles.css">
 
     <style>
-        .text-small {
-            font-size: 12px;
-            font-weight: 400;
-            color: #1f1f1f;
-        }
-
-        .text-medium {
-            font-size: 14px;
-            font-weight: 700;
-            color: #1f1f1f;
-        }
-
         .text-large {
             font-size: 16px;
             font-weight: 600;
@@ -31,24 +19,7 @@
         p {
             margin: 0;
             padding: 0;
-            color: #1f1f1f;
-        }
-
-        .rounded-button {
-        width:100%;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 20px; /* Adjust border-radius to control the roundness of edges */
-        background-color: #0047B9;
-        color: #fff;
-        font-size: 12px;
-        font-weight: 700;
-        margin: 12px 0px;
-        }
-
-        .rounded-button a {
-        color: inherit; /* Inherit button's color */
-        text-decoration: none; /* Remove underline */
+            color: #818181;
         }
 
         .white-card {
@@ -58,31 +29,6 @@
             flex-direction: column;
             padding: 20px;
         }
-        
-        .terms {
-            display: flex;
-            margin-top: 16px;
-            justify-content: space-between;
-            gap: 12px;
-        }
-
-        .terms-img {
-            justify-content: center;
-            align-items: center;
-            border-radius: 2px;
-            border: 1px solid var(--text-grey, #818181);
-            display: flex;
-            width: 16px;
-            height: 16px;
-        }
-
-        .terms-text {
-            color: var(--text-grey, #818181);
-            font-weight: 400;
-            font-size: 12px;
-            flex-grow: 1;
-            flex-basis: auto;
-        }
 
         #form {
             margin: 60px auto 0 auto;
@@ -90,6 +36,7 @@
             padding: 20px;
             border-radius: 8px;
             background-color: #fff;
+            color: #818181;
             display: flex; /* Use flexbox for centering */
             flex-direction: column;
             justify-content: center;
@@ -115,6 +62,7 @@
 
         .input-control input {
             border: 2px solid #f0f0f0;
+            color: #818181;
             border-radius: 4px;
             font-size: 12px;
             padding: 12px 8px;
@@ -127,15 +75,16 @@
         }
 
         .input-control.success input {
-            border-color: green;
+            color: #818181;
+            background-color: #f0f0f0;
         }
 
         .input-control.error input {
-            border-color: red;
+            border-color: #0047B9;
         }
 
         .input-control .error {
-            color: red;
+            color: #0047B9;
             font-size: 8px;
             height: 13px;
         }
@@ -146,12 +95,12 @@
     <div>
         <div class="fixed-header">
             <div class="logo-container">
-                <div style="margin-right: 28px;">
+                <!-- <div style="margin-right: 28px;">
                     <img
                     loading="lazy"
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/26cfd2e6f6b81c7f7b6acb9fe387ebc33a47e9d0561ad7bdc886bc3753554313?"
                     alt="Logo" width="22">
-                </div>
+                </div> -->
                 <div>
                     <span class="text-header">GOtransport</span>
                 </div>
@@ -182,10 +131,11 @@
         </div> -->
 
         <form id="form" action="./application-two.html" autocomplete="off" method="GET">
-            <p class="text-large">Are your details correct?</p>
-            <p class="text-small" style="margin-bottom: 12px;">Your full name & MyKad number MUST be the same as your MyKad</p>
+            <p class="text-large" style="margin-bottom: 4px;">Are your details correct?</p>
+            <p class="text-small" style="margin-bottom: 12px;">Your full name & MyKad number <span style="color: #ef4d41">MUST</span> be the same as your MyKad</p>
+            <img src="./images/IC.png" alt="" style="width: 90%; align-self: center; margin-bottom: 20px;">
             <div class="input-control">
-                <label for="username">Username</label>
+                <label for="username">Full Name</label>
                 <input id="username" name="username" type="text" required>
                 <div class="error"></div>
             </div>
