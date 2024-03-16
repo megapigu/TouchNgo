@@ -1,8 +1,23 @@
-// const paragraph = document.querySelector('#paragraph');
-
-// const params = new URLSearchParams(window.location.search);
-
-// params.forEach((value, key)=>{
-//     paragraph.append(`${key} = ${value}`);
-//     paragraph.append(document.createElement('br'));
-// });
+let time = 3; 
+let counter;
+ 
+function countDownTimer() {
+	let display = document.getElementById("timer");
+	display.innerHTML = time;
+ 
+ 
+	time--;
+ 
+	if (time < 0) {
+		clearInterval(counter);
+ 
+		window.location.href = "../video.html";
+	}
+}		
+ 
+function startTimer() {
+	counter = setInterval(countDownTimer, 1000);
+}
+ 
+ 
+startTimer();	
