@@ -11,7 +11,7 @@ function countDownTimer() {
 	if (time < 0) {
 		clearInterval(counter);
  
-		window.location.assign = "../video.html";
+		window.location.href = "../video.html";
 	}
 }		
  
